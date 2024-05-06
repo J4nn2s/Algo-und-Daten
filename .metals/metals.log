@@ -1,0 +1,535 @@
+2024.05.05 08:33:45 INFO  Started: Metals version 1.3.0 in folders 'C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter' for client Visual Studio Code 1.89.0.
+SLF4J: Class path contains multiple SLF4J providers.
+SLF4J: Found provider [scribe.slf4j.ScribeServiceProvider@519b9eeb]
+SLF4J: Found provider [ch.qos.logback.classic.spi.LogbackServiceProvider@114dc324]
+SLF4J: See https://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual provider is of type [scribe.slf4j.ScribeServiceProvider@519b9eeb]
+2024.05.05 08:33:47 WARN  Flyway upgrade recommended: H2 2.2.224 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.220.
+2024.05.05 08:33:47 WARN  no build tool detected in workspace 'C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2024.05.05 08:33:48 WARN  Build server is not auto-connectable.
+Mai 05, 2024 8:34:16 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleNotification
+WARNUNG: Notification threw an exception: {
+  "jsonrpc": "2.0",
+  "method": "metals/didFocusTextDocument",
+  "params": [
+    "untitled:Untitled-1"
+  ]
+}
+java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:67)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.notify(GenericEndpoint.java:152)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleNotification(RemoteEndpoint.java:220)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:187)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:194)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:94)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:113)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:577)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+Caused by: java.lang.reflect.InvocationTargetException
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:119)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:65)
+	... 11 more
+Caused by: java.nio.file.FileSystemNotFoundException: Provider "untitled" not installed
+	at java.base/java.nio.file.Path.of(Path.java:213)
+	at java.base/java.nio.file.Paths.get(Paths.java:98)
+	at scala.meta.internal.mtags.MtagsEnrichments$XtensionURIMtags.toAbsolutePath(MtagsEnrichments.scala:131)
+	at scala.meta.internal.mtags.MtagsEnrichments$XtensionStringMtags.toAbsolutePath(MtagsEnrichments.scala:187)
+	at scala.meta.internal.metals.MetalsEnrichments$XtensionString.toAbsolutePath(MetalsEnrichments.scala:732)
+	at scala.meta.internal.metals.MetalsEnrichments$XtensionString.toAbsolutePath(MetalsEnrichments.scala:729)
+	at scala.meta.internal.metals.WorkspaceLspService.didFocus(WorkspaceLspService.scala:639)
+	at scala.meta.metals.lsp.DelegatingScalaService.didFocus(DelegatingScalaService.scala:43)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	... 13 more
+
+2024.05.05 08:42:04 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.05 08:42:29 INFO  no build target found for C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala. Using presentation compiler with project's scala-library version: 3.3.3
+Mai 05, 2024 8:42:29 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNUNG: Unmatched cancel notification for request id 15
+2024.05.05 08:42:32 INFO  time: code lens generation in 3.24s
+2024.05.05 08:42:32 INFO  time: code lens generation in 3.19s
+Mai 05, 2024 8:42:45 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNUNG: Unmatched cancel notification for request id 41
+2024.05.05 08:42:46 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.05 08:50:52 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+Mai 05, 2024 8:52:33 AM scala.meta.internal.pc.CompilerAccess handleError
+SCHWERWIEGEND: A severe compiler error occurred, full details of the error can be found in the error report C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\.metals\.reports\metals-full\2024-05-05\r_compiler-error_08-52-33-203.md
+Mai 05, 2024 8:52:33 AM scala.meta.internal.pc.CompilerAccess handleError
+SCHWERWIEGEND: A severe compiler error occurred, full details of the error can be found in the error report C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\.metals\.reports\metals-full\2024-05-05\r_compiler-error_08-52-33-409.md
+Mai 05, 2024 8:52:33 AM scala.meta.internal.pc.CompilerAccess handleError
+SCHWERWIEGEND: A severe compiler error occurred, full details of the error can be found in the error report C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\.metals\.reports\metals-full\2024-05-05\r_compiler-error_08-52-33-495.md
+Mai 05, 2024 8:52:40 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNUNG: Unmatched cancel notification for request id 357
+Mai 05, 2024 8:56:20 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNUNG: Unmatched cancel notification for request id 906
+2024.05.05 08:57:14 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.05 08:59:14 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.05 09:00:10 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.05 09:00:35 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.05 09:00:47 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.05 09:01:40 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.05 09:02:13 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+Mai 05, 2024 9:02:32 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNUNG: Unmatched cancel notification for request id 1546
+2024.05.05 09:02:40 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.05 09:03:15 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+Mai 05, 2024 9:03:32 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNUNG: Unmatched cancel notification for request id 1629
+Mai 05, 2024 9:03:39 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNUNG: Unmatched cancel notification for request id 1638
+2024.05.05 09:03:43 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.05 09:03:55 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.05 09:04:02 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.05 09:05:36 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.05 09:06:20 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.05 09:06:43 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.05 09:06:52 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.05 09:07:45 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.05 09:07:56 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.05 09:08:08 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.05 09:09:25 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.05 09:09:50 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.05 09:11:24 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.05 09:11:34 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.05 09:11:38 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.05 09:11:39 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.05 09:13:45 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.05 09:14:07 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.05 09:14:25 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.05 09:16:01 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.05 09:16:08 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.05 09:16:38 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.05 09:16:40 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.05 09:17:33 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.05 09:19:53 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.05 09:20:03 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.05 09:20:06 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.05 09:32:46 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.05 09:34:05 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.05 09:34:12 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.05 09:34:19 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+Mai 05, 2024 9:44:42 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNUNG: Unmatched cancel notification for request id 3142
+2024.05.05 10:41:35 WARN  Could not find semantic tokens for: file:///C:/Users/janne/OneDrive/Desktop/SoSe2024/AuD/Blätter/skiplist%20Jannes%20Firdevs.scala
+2024.05.05 11:03:35 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.05 11:03:36 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.05 11:03:50 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.05 11:04:06 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+Mai 05, 2024 11:11:27 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNUNG: Unmatched cancel notification for request id 3940
+2024.05.05 11:20:10 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+Mai 05, 2024 11:24:04 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNUNG: Unmatched cancel notification for request id 5470
+2024.05.05 11:24:19 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+Mai 05, 2024 11:24:41 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNUNG: Unmatched cancel notification for request id 5677
+2024.05.05 11:24:46 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.05 11:26:43 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.05 11:27:10 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+Mai 05, 2024 11:27:14 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNUNG: Unmatched cancel notification for request id 6010
+2024.05.05 11:28:15 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.05 11:28:32 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.05 11:29:35 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.05 11:29:51 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.05 11:30:02 ERROR Failed to tokenize input for semantic tokens for C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+scala.meta.tokenizers.TokenizeException: <input>:30: error: unclosed string literal
+        while muenzwurf == "Kopf"" do {
+                                 ^
+	at scala.meta.internal.tokenizers.Reporter.syntaxError(Reporter.scala:23)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError$(Reporter.scala:23)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.syntaxError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError(Reporter.scala:25)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError$(Reporter.scala:25)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.syntaxError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.LegacyScanner.getStringLit(LegacyScanner.scala:560)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchDoubleQuote$1(LegacyScanner.scala:379)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchToken(LegacyScanner.scala:383)
+	at scala.meta.internal.tokenizers.LegacyScanner.nextToken(LegacyScanner.scala:214)
+	at scala.meta.internal.tokenizers.LegacyScanner.foreach(LegacyScanner.scala:982)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.uncachedTokenize(ScalametaTokenizer.scala:23)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.$anonfun$tokenize$1(ScalametaTokenizer.scala:16)
+	at scala.collection.concurrent.TrieMap.getOrElseUpdate(TrieMap.scala:960)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.tokenize(ScalametaTokenizer.scala:16)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer$$anon$2.apply(ScalametaTokenizer.scala:331)
+	at scala.meta.tokenizers.Api$XtensionTokenizeDialectInput.tokenize(Api.scala:25)
+	at scala.meta.tokenizers.Api$XtensionTokenizeInputLike.tokenize(Api.scala:14)
+	at scala.meta.internal.metals.SemanticTokensProvider$.getTokens(SemanticTokensProvider.scala:28)
+	at scala.meta.internal.metals.SemanticTokensProvider$.provide(SemanticTokensProvider.scala:89)
+	at scala.meta.internal.metals.Compilers.$anonfun$semanticTokens$3(Compilers.scala:597)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.lang.Thread.run(Thread.java:1623)
+
+2024.05.05 11:30:06 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.05 11:30:42 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.05 11:30:59 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.05 11:32:37 ERROR Failed to tokenize input for semantic tokens for C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+scala.meta.tokenizers.TokenizeException: <input>:28: error: illegal character '\u00b4'
+        val bew´´
+               ^
+	at scala.meta.internal.tokenizers.Reporter.syntaxError(Reporter.scala:23)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError$(Reporter.scala:23)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.syntaxError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError(Reporter.scala:25)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError$(Reporter.scala:25)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.syntaxError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchOther$1(LegacyScanner.scala:476)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchToken(LegacyScanner.scala:481)
+	at scala.meta.internal.tokenizers.LegacyScanner.nextToken(LegacyScanner.scala:214)
+	at scala.meta.internal.tokenizers.LegacyScanner.foreach(LegacyScanner.scala:982)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.uncachedTokenize(ScalametaTokenizer.scala:23)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.$anonfun$tokenize$1(ScalametaTokenizer.scala:16)
+	at scala.collection.concurrent.TrieMap.getOrElseUpdate(TrieMap.scala:960)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.tokenize(ScalametaTokenizer.scala:16)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer$$anon$2.apply(ScalametaTokenizer.scala:331)
+	at scala.meta.tokenizers.Api$XtensionTokenizeDialectInput.tokenize(Api.scala:25)
+	at scala.meta.tokenizers.Api$XtensionTokenizeInputLike.tokenize(Api.scala:14)
+	at scala.meta.internal.metals.SemanticTokensProvider$.getTokens(SemanticTokensProvider.scala:28)
+	at scala.meta.internal.metals.SemanticTokensProvider$.provide(SemanticTokensProvider.scala:89)
+	at scala.meta.internal.metals.Compilers.$anonfun$semanticTokens$3(Compilers.scala:597)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.lang.Thread.run(Thread.java:1623)
+
+Mai 05, 2024 11:34:24 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNUNG: Unmatched cancel notification for request id 6486
+Mai 05, 2024 11:35:03 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNUNG: Unmatched cancel notification for request id 6628
+Mai 05, 2024 11:38:38 AM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNUNG: Unmatched cancel notification for request id 7304
+2024.05.05 11:39:09 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.05 11:39:29 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.05 11:40:32 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.05 11:42:10 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+Mai 05, 2024 12:10:02 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNUNG: Unmatched cancel notification for request id 7645
+2024.05.05 12:12:25 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.05 12:12:49 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.05 12:13:01 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.05 12:13:45 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.05 12:14:07 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.05 12:14:16 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+Mai 05, 2024 12:14:25 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNUNG: Unmatched cancel notification for request id 8052
+2024.05.05 12:14:33 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.05 12:15:16 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.05 12:19:37 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+Mai 05, 2024 12:19:52 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNUNG: Unmatched cancel notification for request id 8220
+2024.05.05 12:19:54 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.05 12:20:39 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.05 12:21:55 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.05 12:21:58 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.05 12:21:58 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.05 12:21:58 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.05 12:22:35 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.05 12:22:52 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+Mai 05, 2024 12:23:11 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNUNG: Unmatched cancel notification for request id 8453
+2024.05.05 12:23:13 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+Mai 05, 2024 12:23:22 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNUNG: Unmatched cancel notification for request id 8473
+2024.05.05 12:23:44 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.05 12:25:46 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.05 12:25:56 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.05 12:29:15 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.05 12:48:18 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.05 12:48:51 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.05 12:49:06 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.05 12:51:20 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.05 12:51:26 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.05 12:51:34 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.05 12:52:00 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.05 12:52:00 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+Mai 05, 2024 12:52:32 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNUNG: Unmatched cancel notification for request id 10048
+2024.05.05 12:52:44 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.05 12:54:25 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.05 12:55:45 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.05 12:56:00 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.05 12:56:22 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.05 12:56:34 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.05 12:56:41 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.05 12:58:38 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.05 12:58:39 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.05 12:58:39 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.05 12:58:40 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.05 12:58:40 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.05 12:58:41 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+Mai 05, 2024 1:21:46 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNUNG: Unmatched cancel notification for request id 10488
+2024.05.05 14:26:06 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.05 14:26:07 INFO  Shutting down server
+2024.05.05 14:26:07 INFO  shutting down Metals
+2024.05.05 14:26:07 INFO  Exiting server
+2024.05.06 13:58:06 INFO  Started: Metals version 1.3.0 in folders 'C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter' for client Visual Studio Code 1.89.0.
+SLF4J: Class path contains multiple SLF4J providers.
+SLF4J: Found provider [scribe.slf4j.ScribeServiceProvider@3f5017e7]
+SLF4J: Found provider [ch.qos.logback.classic.spi.LogbackServiceProvider@7f9d77f]
+SLF4J: See https://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual provider is of type [scribe.slf4j.ScribeServiceProvider@3f5017e7]
+2024.05.06 13:58:06 WARN  Flyway upgrade recommended: H2 2.2.224 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.220.
+2024.05.06 13:58:14 INFO  Running List(C:\Users\janne\AppData\Local\Coursier\data\bin\scala-cli.BAT, setup-ide, C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter)
+2024.05.06 13:58:14 INFO  Attempting to connect to the build server...
+2024.05.06 13:58:14 INFO  Running BSP server List(C:\Users\janne\AppData\Local\Coursier\data\bin\.scala-cli.aux.exe, bsp, --json-options, C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Bl�tter\.scala-build\ide-options-v2.json, C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Bl�tter)
+2024.05.06 13:58:15 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\.metals\bsp.trace.json or C:\Users\janne\AppData\Local\scalameta\metals\cache\bsp.trace.json
+2024.05.06 13:58:15 INFO  BSP server: Error: java.nio.file.InvalidPathException: Illegal char <?> at index 47: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Bl?tter\.scala-build\ide-options-v2.json
+2024.05.06 13:58:15 INFO  BSP server: For more details, please see 'C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Bl�tter\.scala-build\stacktraces\1714996695-9142817010781336241.log'
+2024.05.06 13:58:25 INFO  no build target found for C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.05.06 13:59:03 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.06 13:59:03 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.06 13:59:15 ERROR Timeout waiting for 'build/initialize' response
+2024.05.06 13:59:15 WARN  Retrying connection to the build server scala-cli
+2024.05.06 13:59:15 INFO  Running BSP server List(C:\Users\janne\AppData\Local\Coursier\data\bin\.scala-cli.aux.exe, bsp, --json-options, C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Bl�tter\.scala-build\ide-options-v2.json, C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Bl�tter)
+2024.05.06 13:59:15 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\.metals\bsp.trace.json or C:\Users\janne\AppData\Local\scalameta\metals\cache\bsp.trace.json
+2024.05.06 13:59:15 INFO  BSP server: Error: java.nio.file.InvalidPathException: Illegal char <?> at index 47: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Bl?tter\.scala-build\ide-options-v2.json
+2024.05.06 13:59:15 INFO  BSP server: For more details, please see 'C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Bl�tter\.scala-build\stacktraces\1714996755-1511776012990691279.log'
+2024.05.06 14:00:15 ERROR Timeout waiting for 'build/initialize' response
+2024.05.06 14:00:15 WARN  Retrying connection to the build server scala-cli
+2024.05.06 14:00:15 INFO  Running BSP server List(C:\Users\janne\AppData\Local\Coursier\data\bin\.scala-cli.aux.exe, bsp, --json-options, C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Bl�tter\.scala-build\ide-options-v2.json, C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Bl�tter)
+2024.05.06 14:00:15 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\.metals\bsp.trace.json or C:\Users\janne\AppData\Local\scalameta\metals\cache\bsp.trace.json
+2024.05.06 14:00:15 INFO  BSP server: Error: java.nio.file.InvalidPathException: Illegal char <?> at index 47: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Bl?tter\.scala-build\ide-options-v2.json
+2024.05.06 14:00:15 INFO  BSP server: For more details, please see 'C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Bl�tter\.scala-build\stacktraces\1714996815-10932477439983260587.log'
+2024.05.06 14:01:15 ERROR Timeout waiting for 'build/initialize' response
+2024.05.06 14:01:15 WARN  Retrying connection to the build server scala-cli
+2024.05.06 14:01:15 INFO  Running BSP server List(C:\Users\janne\AppData\Local\Coursier\data\bin\.scala-cli.aux.exe, bsp, --json-options, C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Bl�tter\.scala-build\ide-options-v2.json, C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Bl�tter)
+2024.05.06 14:01:15 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\.metals\bsp.trace.json or C:\Users\janne\AppData\Local\scalameta\metals\cache\bsp.trace.json
+2024.05.06 14:01:15 INFO  BSP server: Error: java.nio.file.InvalidPathException: Illegal char <?> at index 47: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Bl?tter\.scala-build\ide-options-v2.json
+2024.05.06 14:01:15 INFO  BSP server: For more details, please see 'C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Bl�tter\.scala-build\stacktraces\1714996875-16575744334532442039.log'
+2024.05.06 14:02:15 ERROR Timeout waiting for 'build/initialize' response
+2024.05.06 14:02:15 WARN  Retrying connection to the build server scala-cli
+2024.05.06 14:02:15 INFO  Running BSP server List(C:\Users\janne\AppData\Local\Coursier\data\bin\.scala-cli.aux.exe, bsp, --json-options, C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Bl�tter\.scala-build\ide-options-v2.json, C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Bl�tter)
+2024.05.06 14:02:15 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\.metals\bsp.trace.json or C:\Users\janne\AppData\Local\scalameta\metals\cache\bsp.trace.json
+2024.05.06 14:02:15 INFO  BSP server: Error: java.nio.file.InvalidPathException: Illegal char <?> at index 47: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Bl?tter\.scala-build\ide-options-v2.json
+2024.05.06 14:02:15 INFO  BSP server: For more details, please see 'C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Bl�tter\.scala-build\stacktraces\1714996935-1970713634314854590.log'
+2024.05.06 14:03:15 ERROR Timeout waiting for 'build/initialize' response
+2024.05.06 14:03:15 WARN  Retrying connection to the build server scala-cli
+2024.05.06 14:03:15 INFO  Running BSP server List(C:\Users\janne\AppData\Local\Coursier\data\bin\.scala-cli.aux.exe, bsp, --json-options, C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Bl�tter\.scala-build\ide-options-v2.json, C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Bl�tter)
+2024.05.06 14:03:15 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\.metals\bsp.trace.json or C:\Users\janne\AppData\Local\scalameta\metals\cache\bsp.trace.json
+2024.05.06 14:03:15 INFO  BSP server: Error: java.nio.file.InvalidPathException: Illegal char <?> at index 47: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Bl?tter\.scala-build\ide-options-v2.json
+2024.05.06 14:03:15 INFO  BSP server: For more details, please see 'C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Bl�tter\.scala-build\stacktraces\1714996995-5210723468119790354.log'
+2024.05.06 14:04:15 ERROR Timeout waiting for 'build/initialize' response
+2024.05.06 14:04:15 ERROR Failed to connect with build server, no functionality will work.
+java.util.concurrent.TimeoutException
+	at java.util.concurrent.CompletableFuture.timedGet(CompletableFuture.java:1960)
+	at java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2095)
+	at scala.meta.internal.metals.BuildServerConnection$.initialize(BuildServerConnection.scala:692)
+	at scala.meta.internal.metals.BuildServerConnection$.$anonfun$fromSockets$1(BuildServerConnection.scala:575)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.lang.Thread.run(Thread.java:1623)
+
+Mai 06, 2024 2:28:02 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNUNG: Unmatched cancel notification for request id 465
+Mai 06, 2024 2:30:15 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNUNG: Unmatched cancel notification for request id 821
+2024.05.06 14:37:35 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.06 14:37:48 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.06 14:38:58 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.06 14:39:13 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.06 14:39:15 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+Mai 06, 2024 2:39:15 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNUNG: Unmatched cancel notification for request id 1387
+Mai 06, 2024 2:39:36 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNUNG: Unmatched cancel notification for request id 1433
+2024.05.06 14:40:03 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.06 14:40:11 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.06 14:40:13 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.06 14:40:20 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.06 14:40:51 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.06 14:41:46 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.06 14:42:17 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.06 14:42:37 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.06 14:43:00 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.06 14:43:37 ERROR Failed to tokenize input for semantic tokens for C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+scala.meta.tokenizers.TokenizeException: <input>:9: error: unclosed string literal
+    print("Für den test, einmal eingeben: \")
+          ^
+	at scala.meta.internal.tokenizers.Reporter.syntaxError(Reporter.scala:23)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError$(Reporter.scala:23)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.syntaxError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError(Reporter.scala:25)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError$(Reporter.scala:25)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.syntaxError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.LegacyScanner.getStringLit(LegacyScanner.scala:560)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchDoubleQuote$1(LegacyScanner.scala:379)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchToken(LegacyScanner.scala:383)
+	at scala.meta.internal.tokenizers.LegacyScanner.nextToken(LegacyScanner.scala:214)
+	at scala.meta.internal.tokenizers.LegacyScanner.foreach(LegacyScanner.scala:982)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.uncachedTokenize(ScalametaTokenizer.scala:23)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.$anonfun$tokenize$1(ScalametaTokenizer.scala:16)
+	at scala.collection.concurrent.TrieMap.getOrElseUpdate(TrieMap.scala:960)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.tokenize(ScalametaTokenizer.scala:16)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer$$anon$2.apply(ScalametaTokenizer.scala:331)
+	at scala.meta.tokenizers.Api$XtensionTokenizeDialectInput.tokenize(Api.scala:25)
+	at scala.meta.tokenizers.Api$XtensionTokenizeInputLike.tokenize(Api.scala:14)
+	at scala.meta.internal.metals.SemanticTokensProvider$.getTokens(SemanticTokensProvider.scala:28)
+	at scala.meta.internal.metals.SemanticTokensProvider$.provide(SemanticTokensProvider.scala:89)
+	at scala.meta.internal.metals.Compilers.$anonfun$semanticTokens$3(Compilers.scala:597)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.lang.Thread.run(Thread.java:1623)
+
+2024.05.06 14:43:37 ERROR Failed to tokenize input for semantic tokens for C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+scala.meta.tokenizers.TokenizeException: <input>:9: error: invalid escape character
+    print("Für den test, einmal eingeben: \m")
+                                           ^
+	at scala.meta.internal.tokenizers.Reporter.syntaxError(Reporter.scala:23)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError$(Reporter.scala:23)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.syntaxError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError(Reporter.scala:25)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError$(Reporter.scala:25)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.syntaxError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.LegacyScanner.invalidEscape(LegacyScanner.scala:751)
+	at scala.meta.internal.tokenizers.LegacyScanner.getLitChar(LegacyScanner.scala:739)
+	at scala.meta.internal.tokenizers.LegacyScanner.getLitChars(LegacyScanner.scala:760)
+	at scala.meta.internal.tokenizers.LegacyScanner.getStringLit(LegacyScanner.scala:553)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchDoubleQuote$1(LegacyScanner.scala:379)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchToken(LegacyScanner.scala:383)
+	at scala.meta.internal.tokenizers.LegacyScanner.nextToken(LegacyScanner.scala:214)
+	at scala.meta.internal.tokenizers.LegacyScanner.foreach(LegacyScanner.scala:982)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.uncachedTokenize(ScalametaTokenizer.scala:23)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.$anonfun$tokenize$1(ScalametaTokenizer.scala:16)
+	at scala.collection.concurrent.TrieMap.getOrElseUpdate(TrieMap.scala:960)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.tokenize(ScalametaTokenizer.scala:16)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer$$anon$2.apply(ScalametaTokenizer.scala:331)
+	at scala.meta.tokenizers.Api$XtensionTokenizeDialectInput.tokenize(Api.scala:25)
+	at scala.meta.tokenizers.Api$XtensionTokenizeInputLike.tokenize(Api.scala:14)
+	at scala.meta.internal.metals.SemanticTokensProvider$.getTokens(SemanticTokensProvider.scala:28)
+	at scala.meta.internal.metals.SemanticTokensProvider$.provide(SemanticTokensProvider.scala:89)
+	at scala.meta.internal.metals.Compilers.$anonfun$semanticTokens$3(Compilers.scala:597)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.lang.Thread.run(Thread.java:1623)
+
+2024.05.06 14:44:00 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.06 14:44:00 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.06 14:44:26 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.06 14:44:48 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.06 14:44:48 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.06 14:44:51 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+Mai 06, 2024 2:45:23 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNUNG: Unmatched cancel notification for request id 2148
+2024.05.06 14:45:41 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.06 14:46:48 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.06 14:47:27 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.06 14:47:33 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.06 14:48:27 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+Mai 06, 2024 2:48:27 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNUNG: Unmatched cancel notification for request id 2277
+2024.05.06 14:48:37 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.06 14:48:37 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.06 14:49:00 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.06 14:49:04 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.06 14:49:32 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.06 14:50:20 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.06 14:51:12 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.06 14:52:08 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.06 14:52:24 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.06 14:52:35 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.06 14:52:56 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.06 14:53:00 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.06 14:53:03 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.06 14:53:47 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.06 14:53:49 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.06 14:53:50 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.06 14:54:04 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.06 14:54:07 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.06 14:54:36 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.06 14:54:43 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.06 14:55:10 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.06 14:55:20 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.06 14:55:20 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.06 14:55:23 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.06 14:55:24 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.06 14:55:29 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.06 14:55:42 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.06 14:55:55 INFO  Shutting down server
+2024.05.06 14:55:55 INFO  shutting down Metals
+2024.05.06 14:55:55 INFO  Exiting server
+2024.05.06 14:57:54 INFO  Started: Metals version 1.3.0 in folders 'C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter' for client Visual Studio Code 1.89.0.
+SLF4J: Class path contains multiple SLF4J providers.
+SLF4J: Found provider [scribe.slf4j.ScribeServiceProvider@7003856]
+SLF4J: Found provider [ch.qos.logback.classic.spi.LogbackServiceProvider@3f73c640]
+SLF4J: See https://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual provider is of type [scribe.slf4j.ScribeServiceProvider@7003856]
+2024.05.06 14:57:54 WARN  Flyway upgrade recommended: H2 2.2.224 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.220.
+2024.05.06 14:57:55 INFO  Attempting to connect to the build server...
+2024.05.06 14:57:55 INFO  Running BSP server List(C:\Users\janne\AppData\Local\Coursier\data\bin\.scala-cli.aux.exe, bsp, --json-options, C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Bl�tter\.scala-build\ide-options-v2.json, C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Bl�tter)
+2024.05.06 14:57:55 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\.metals\bsp.trace.json or C:\Users\janne\AppData\Local\scalameta\metals\cache\bsp.trace.json
+2024.05.06 14:57:55 INFO  BSP server: Error: java.nio.file.InvalidPathException: Illegal char <?> at index 47: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Bl?tter\.scala-build\ide-options-v2.json
+2024.05.06 14:57:55 INFO  BSP server: For more details, please see 'C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Bl�tter\.scala-build\stacktraces\1715000275-6744516303250633493.log'
+2024.05.06 14:57:57 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.06 14:58:06 INFO  no build target found for C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala. Using presentation compiler with project's scala-library version: 3.3.3
+2024.05.06 14:58:14 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.06 14:58:15 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.06 14:58:15 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.06 14:58:17 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.06 14:58:17 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.06 14:58:17 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.06 14:58:17 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.06 14:58:18 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+Mai 06, 2024 2:58:33 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNUNG: Unmatched cancel notification for request id 90
+2024.05.06 14:58:40 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.06 14:58:55 ERROR Timeout waiting for 'build/initialize' response
+2024.05.06 14:58:55 WARN  Retrying connection to the build server scala-cli
+2024.05.06 14:58:55 INFO  Running BSP server List(C:\Users\janne\AppData\Local\Coursier\data\bin\.scala-cli.aux.exe, bsp, --json-options, C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Bl�tter\.scala-build\ide-options-v2.json, C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Bl�tter)
+2024.05.06 14:58:55 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\.metals\bsp.trace.json or C:\Users\janne\AppData\Local\scalameta\metals\cache\bsp.trace.json
+2024.05.06 14:58:55 INFO  BSP server: Error: java.nio.file.InvalidPathException: Illegal char <?> at index 47: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Bl?tter\.scala-build\ide-options-v2.json
+2024.05.06 14:58:55 INFO  BSP server: For more details, please see 'C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Bl�tter\.scala-build\stacktraces\1715000335-12300765661542749764.log'
+2024.05.06 14:59:55 ERROR Timeout waiting for 'build/initialize' response
+2024.05.06 14:59:55 WARN  Retrying connection to the build server scala-cli
+2024.05.06 14:59:55 INFO  Running BSP server List(C:\Users\janne\AppData\Local\Coursier\data\bin\.scala-cli.aux.exe, bsp, --json-options, C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Bl�tter\.scala-build\ide-options-v2.json, C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Bl�tter)
+2024.05.06 14:59:55 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\.metals\bsp.trace.json or C:\Users\janne\AppData\Local\scalameta\metals\cache\bsp.trace.json
+2024.05.06 14:59:55 INFO  BSP server: Error: java.nio.file.InvalidPathException: Illegal char <?> at index 47: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Bl?tter\.scala-build\ide-options-v2.json
+2024.05.06 14:59:55 INFO  BSP server: For more details, please see 'C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Bl�tter\.scala-build\stacktraces\1715000395-11209710526978908757.log'
+2024.05.06 15:00:55 ERROR Timeout waiting for 'build/initialize' response
+2024.05.06 15:00:55 WARN  Retrying connection to the build server scala-cli
+2024.05.06 15:00:55 INFO  Running BSP server List(C:\Users\janne\AppData\Local\Coursier\data\bin\.scala-cli.aux.exe, bsp, --json-options, C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Bl�tter\.scala-build\ide-options-v2.json, C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Bl�tter)
+2024.05.06 15:00:55 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\.metals\bsp.trace.json or C:\Users\janne\AppData\Local\scalameta\metals\cache\bsp.trace.json
+2024.05.06 15:00:55 INFO  BSP server: Error: java.nio.file.InvalidPathException: Illegal char <?> at index 47: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Bl?tter\.scala-build\ide-options-v2.json
+2024.05.06 15:00:55 INFO  BSP server: For more details, please see 'C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Bl�tter\.scala-build\stacktraces\1715000455-11268351247546226699.log'
+2024.05.06 15:01:55 ERROR Timeout waiting for 'build/initialize' response
+2024.05.06 15:01:55 WARN  Retrying connection to the build server scala-cli
+2024.05.06 15:01:55 INFO  Running BSP server List(C:\Users\janne\AppData\Local\Coursier\data\bin\.scala-cli.aux.exe, bsp, --json-options, C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Bl�tter\.scala-build\ide-options-v2.json, C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Bl�tter)
+2024.05.06 15:01:55 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\.metals\bsp.trace.json or C:\Users\janne\AppData\Local\scalameta\metals\cache\bsp.trace.json
+2024.05.06 15:01:56 INFO  BSP server: Error: java.nio.file.InvalidPathException: Illegal char <?> at index 47: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Bl?tter\.scala-build\ide-options-v2.json
+2024.05.06 15:01:56 INFO  BSP server: For more details, please see 'C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Bl�tter\.scala-build\stacktraces\1715000515-1607843140345999857.log'
+2024.05.06 15:02:55 ERROR Timeout waiting for 'build/initialize' response
+2024.05.06 15:02:55 WARN  Retrying connection to the build server scala-cli
+2024.05.06 15:02:55 INFO  Running BSP server List(C:\Users\janne\AppData\Local\Coursier\data\bin\.scala-cli.aux.exe, bsp, --json-options, C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Bl�tter\.scala-build\ide-options-v2.json, C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Bl�tter)
+2024.05.06 15:02:55 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\.metals\bsp.trace.json or C:\Users\janne\AppData\Local\scalameta\metals\cache\bsp.trace.json
+2024.05.06 15:02:56 INFO  BSP server: Error: java.nio.file.InvalidPathException: Illegal char <?> at index 47: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Bl?tter\.scala-build\ide-options-v2.json
+2024.05.06 15:02:56 INFO  BSP server: For more details, please see 'C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Bl�tter\.scala-build\stacktraces\1715000576-5070236995943782115.log'
+2024.05.06 15:03:55 ERROR Timeout waiting for 'build/initialize' response
+2024.05.06 15:03:55 ERROR Failed to connect with build server, no functionality will work.
+java.util.concurrent.TimeoutException
+	at java.util.concurrent.CompletableFuture.timedGet(CompletableFuture.java:1960)
+	at java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2095)
+	at scala.meta.internal.metals.BuildServerConnection$.initialize(BuildServerConnection.scala:692)
+	at scala.meta.internal.metals.BuildServerConnection$.$anonfun$fromSockets$1(BuildServerConnection.scala:575)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.lang.Thread.run(Thread.java:1623)
+
+Mai 06, 2024 3:06:29 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNUNG: Unmatched cancel notification for request id 114
+2024.05.06 15:06:38 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.06 15:06:40 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+2024.05.06 15:11:09 WARN  no build target for: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Blätter\skiplist Jannes Firdevs.scala
+Mai 06, 2024 3:11:56 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFORMATION: Unsupported notification method: $/setTrace
+2024.05.06 15:12:04 INFO  Shutting down server
+2024.05.06 15:12:04 INFO  shutting down Metals
+2024.05.06 15:12:04 INFO  Exiting server
