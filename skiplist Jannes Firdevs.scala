@@ -58,6 +58,7 @@ class skipList{
     private def remove(k: Int): Unit = {
         var Q: List[Node] = search(k)
         var n: Node = Q.last
+        // hier anders als Thomas
     }
     def muenzwurf: String = {
         val kopfOderZahl: List[String] = List("Kopf", "Zahl") 
