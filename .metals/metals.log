@@ -533,3 +533,15 @@ INFORMATION: Unsupported notification method: $/setTrace
 2024.05.06 15:12:04 INFO  Shutting down server
 2024.05.06 15:12:04 INFO  shutting down Metals
 2024.05.06 15:12:04 INFO  Exiting server
+2024.05.06 15:13:17 INFO  Started: Metals version 1.3.0 in folders 'C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Algo-und-Daten' for client Visual Studio Code 1.89.0.
+SLF4J: Class path contains multiple SLF4J providers.
+SLF4J: Found provider [scribe.slf4j.ScribeServiceProvider@77a7b71c]
+SLF4J: Found provider [ch.qos.logback.classic.spi.LogbackServiceProvider@76dfca64]
+SLF4J: See https://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual provider is of type [scribe.slf4j.ScribeServiceProvider@77a7b71c]
+2024.05.06 15:13:18 WARN  Flyway upgrade recommended: H2 2.2.224 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.220.
+2024.05.06 15:13:18 INFO  Attempting to connect to the build server...
+2024.05.06 15:13:18 INFO  Running BSP server List(C:\Users\janne\AppData\Local\Coursier\data\bin\.scala-cli.aux.exe, bsp, --json-options, C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Bl�tter\.scala-build\ide-options-v2.json, C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Bl�tter)
+2024.05.06 15:13:18 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Algo-und-Daten\.metals\bsp.trace.json or C:\Users\janne\AppData\Local\scalameta\metals\cache\bsp.trace.json
+2024.05.06 15:13:18 INFO  BSP server: Error: java.nio.file.InvalidPathException: Illegal char <?> at index 47: C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Bl?tter\.scala-build\ide-options-v2.json
+2024.05.06 15:13:18 INFO  BSP server: For more details, please see 'C:\Users\janne\OneDrive\Desktop\SoSe2024\AuD\Algo-und-Daten\.scala-build\stacktraces\1715001198-12903189718115116155.log'
