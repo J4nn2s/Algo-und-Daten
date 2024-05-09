@@ -22,6 +22,12 @@ class skipList{
             Q = n::Q 
             n = n.down
         }
+        println(s"Suche bis ${key} Stack: \n")
+        for (node <- Q) do {
+            println(s"Key: ${node.key}, Value: ${node.value}")
+        }
+        print(s"TEST QLAST --- ${Q.last.key}")
+        println("")
         return Q
     }
 
@@ -34,7 +40,7 @@ class skipList{
         var newNode = Node(k, v, n, n.succ, null) // neuer Knoten mit pred "n"
         newNode.succ.pred = newNode
         newNode.pred.succ = newNode // n also der Knoten davor ist jetzt der Vorgänger von newNode und der newNode der Nachfolger von n
-        while (muenzwurf == "Kopf") do 
+        while (muenzwurf == "Kopf") do {
             if (Q.isEmpty) then {
                 var headNew = Node(Int.MinValue, Int.MinValue, null, newNode, head)
                 var bottomNew = Node(Int.MaxValue, Int.MaxValue, newNode, null, bottom)
@@ -53,12 +59,22 @@ class skipList{
                 // newNodeAfter.down = newNode i think irrelevant due to val newNodeAfter
                 newNode = newNodeAfter
             }
+        }
     }
     // still work left to be done here
     private def remove(k: Int): Unit = {
         var Q: List[Node] = search(k)
         var n: Node = Q.last
-        // hier anders als Thomas
+        println(s"${n.key}")
+        
+        if (n.key != k) {
+            throw Exception("Element gibt es nicht")
+        }
+        while (n != null && n.key ==k) do {
+            n.pred.succ = n.succ // neue Links setzen
+            n.succ.pred = n.pred
+            n = n.down
+        }
     }
     def muenzwurf: String = {
         val kopfOderZahl: List[String] = List("Kopf", "Zahl") 
@@ -73,17 +89,42 @@ class skipList{
         put(15 ,"l")
         put(20, "D")
         put(25, "E")
+        search(15)
+        search(25)
+        println("--------------------------------------")
+        printAllKeysAndVals()
+        remove(15)
+        println("15 entfernt")
+        printAllKeysAndVals()
+
+        println()
+        printSkiplist()
+
+    }
 
 
-        val searchResult = search(15)
-
-        // Ergebnis der Suche ausgeben
-        if (searchResult.nonEmpty) {
-        println("Suchergebnis:")
-        searchResult.foreach(node => println(s"Key: ${node.key}, Value: ${node.value}"))
-        } else {
-        println("Schlüssel nicht gefunden.")
+    // in Empfehlung von Kommilitonen :)
+    def printSkiplist(): Unit = {
+        print("So sehen die keys aus \n")
+        var start: Node = head
+        while (start != null) {
+            var current: Node = start
+            while (current != null) {
+                print(s"${current.key} ")
+                current = current.succ
+            }
+            start = start.down
+            println()
         }
+    }
+    def printAllKeysAndVals(): Unit = {
+        var start: Node = head
+        while (start != null) {
+            print(s"Key: ${start.key} + Val: ${start.value}")
+            println("")
+            start = start.succ
+        }
+    
     }
 }
 
