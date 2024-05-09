@@ -60,27 +60,28 @@ class skipList{
     }
     // still work left to be done here
     private def remove(k: Int): Unit = {
-    var q = search(k)
-    var n = q.last
+        var q = search(k)
+        var n = q.last
 
-    if (n.key != k)
-      throw new NoSuchElementException
+        if (n.key != k)
+        throw new NoSuchElementException
 
-    q = q.init // Entferne das letzte Element aus der Liste
+        q = q.init // vorimplementierte removeLast[A] Funktion
 
-    while (n != null && n.key == k) {
-      n.pred.succ = n.succ
-      n.succ.pred = n.pred
-      n = n.down
+        while (n != null && n.key == k) {
+            n.pred.succ = n.succ
+            n.succ.pred = n.pred
+            n = n.down
 
-      if (q.nonEmpty)
-        n = q.last
-      else
-        n = null
-    }
+            if (q.nonEmpty)
+                n = q.last
+            else
+                n = null
+        }
 
-    while (head.key == Double.NegativeInfinity && head.succ.key == Double.PositiveInfinity && head.down != null)
-    head = head.down
+        while (head.key == Int.MinValue && head.succ.key == Int.MaxValue && head.down != null) do {
+            head = head.down
+        }
      }
 
     def muenzwurf: String = {
@@ -89,7 +90,6 @@ class skipList{
         kopfOderZahl(wurf)
     }
     def test: Unit = {
-        
         put(5, "A")
         put(10, "B")
         put(15, "C")
@@ -108,8 +108,6 @@ class skipList{
         printSkiplist()
 
     }
-
-
     // in Empfehlung von Kommilitonen :)
     def printSkiplist(): Unit = {
         print("So sehen die keys aus \n")
