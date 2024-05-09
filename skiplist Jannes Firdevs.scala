@@ -1,7 +1,6 @@
 import scala.util.Random
 // Firdevs Ugur und Jannes Glaubitz
-// just type Main in REPL to execute test object
-// chatgpt was used to create the cool test object :) & compiling errors
+// chatgpt was used to create the cool test object :) & for many compiling errors
 
 // skipList utilises a List of Nodes instead of a Stack
 
