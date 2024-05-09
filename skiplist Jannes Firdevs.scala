@@ -60,19 +60,29 @@ class skipList{
     }
     // still work left to be done here
     private def remove(k: Int): Unit = {
-        var Q: List[Node] = search(k)
-        var n: Node = Q.last
-        println(s"${n.key}")
-        
-        if (n.key != k) {
-            throw Exception("Element gibt es nicht")
-        }
-        while (n != null && n.key ==k) do {
-            n.pred.succ = n.succ // neue Links setzen
-            n.succ.pred = n.pred
-            n = n.down
-        }
+    var q = search(k)
+    var n = q.last
+
+    if (n.key != k)
+      throw new NoSuchElementException
+
+    q = q.init // Entferne das letzte Element aus der Liste
+
+    while (n != null && n.key == k) {
+      n.pred.succ = n.succ
+      n.succ.pred = n.pred
+      n = n.down
+
+      if (q.nonEmpty)
+        n = q.last
+      else
+        n = null
     }
+
+    while (head.key == Double.NegativeInfinity && head.succ.key == Double.PositiveInfinity && head.down != null)
+    head = head.down
+     }
+
     def muenzwurf: String = {
         val kopfOderZahl: List[String] = List("Kopf", "Zahl") 
         val wurf: Int = Random.between(0,2)
@@ -83,7 +93,6 @@ class skipList{
         put(5, "A")
         put(10, "B")
         put(15, "C")
-        put(15 ,"l")
         put(20, "D")
         put(25, "E")
         print("-------SEARCH START von 15-------")
