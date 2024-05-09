@@ -19,7 +19,7 @@ class skipList{
             while (n.succ.key <= key) do {
                 n = n.succ
             }
-            Q :+= n  // still need to look at that 
+            Q = n :: Q  // Hier wird der Knoten n an die Liste Q vorne angefügt
             n = n.down
         }
         for (node <- Q) do {
