@@ -14,20 +14,17 @@ class skipList{
     
     private def search(key: Int): List[Node] = {
         var Q: List[Node] = List()
-        var n: Node = head // of highest list ?!
-        while n != null do {
-            while n.succ.key <= key do {
+        var n: Node = head
+        while (n != null) do {
+            while (n.succ.key <= key) do {
                 n = n.succ
             }
-            Q = n::Q 
+            Q :+= n  // still need to look at that 
             n = n.down
         }
-        println(s"Suche bis ${key} Stack: \n")
         for (node <- Q) do {
             println(s"Key: ${node.key}, Value: ${node.value}")
         }
-        print(s"TEST QLAST --- ${Q.last.key}")
-        println("")
         return Q
     }
 
@@ -89,9 +86,10 @@ class skipList{
         put(15 ,"l")
         put(20, "D")
         put(25, "E")
+        print("-------SEARCH START von 15-------")
         search(15)
         search(25)
-        println("--------------------------------------")
+        println("-------SEARCH START von 25-------")
         printAllKeysAndVals()
         remove(15)
         println("15 entfernt")
