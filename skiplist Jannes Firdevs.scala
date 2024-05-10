@@ -15,35 +15,41 @@ class skipList{
         var Q: List[Node] = List()
         var n: Node = head
         while (n != null) do {
-            while (n.succ.key <= key) do {
+            while (n.succ.key <= key && n.succ != null) do {
                 n = n.succ
             }
             Q = n :: Q  // Hier wird der Knoten n an die Liste Q vorne angefügt
             n = n.down
         }
-        for (node <- Q) do {
-            println(s"Key: ${node.key}, Value: ${node.value}")
-        }
         return Q
-    }
+    }   
 
     private def put(k: Int, v: Any): Unit = {
         var Q: List[Node] = search(k)
         var n: Node = Q.last // aus abstract class list -> last , right etc
         if (n.key == k) then { // Wert updaten , wenn k bereits vorhanden
-            n.value = v
+            println("Ich habe erkannt das der Wert gleich ist")
+            for (i <- Q) {
+                if (i.key == k) {
+                    i.value = v
+                }
+            }
+            return
         }
         var newNode = Node(k, v, n, n.succ, null) // neuer Knoten mit pred "n"
-        newNode.succ.pred = newNode
-        newNode.pred.succ = newNode // n also der Knoten davor ist jetzt der Vorgänger von newNode und der newNode der Nachfolger von n
+        n.succ.pred = newNode
+        if (Q.length >1){
+            n.pred.succ = newNode // n also der Knoten davor ist jetzt der Vorgänger von newNode und der newNode der Nachfolger von n
+        }
         while (muenzwurf == "Kopf") do {
             if (Q.isEmpty) then {
-                var headNew = Node(Int.MinValue, Int.MinValue, null, newNode, head)
-                var bottomNew = Node(Int.MaxValue, Int.MaxValue, newNode, null, bottom)
-                //
+                var headNew = Node(Int.MinValue, null, null, newNode, head)
+                var bottomNew = Node(Int.MaxValue, null, newNode, null, bottom)
+                
+                headNew.succ = newNode
+                bottomNew.pred = newNode
                 head = headNew // experiment, damit bei nächsten insert Vorgängen auf diese heads / bottoms verwiesen wird 
                 bottom = bottomNew
-
             }
             else { // Q was not empty, also newNode einfügen in bestehende Liste nach n
                 var n : Node = Q.last
@@ -51,9 +57,6 @@ class skipList{
 
                 n.succ.pred = newNodeAfter
                 n.succ = newNodeAfter
-                // vertical
-                // newNodeAfter.down = newNode i think irrelevant due to val newNodeAfter
-                newNode = newNodeAfter
             }
         }
     }
@@ -89,23 +92,28 @@ class skipList{
         kopfOderZahl(wurf)
     }
     def test: Unit = {
-        put(5, "A")
-        put(10, "B")
+        // print(r.last.key)
         put(15, "C")
+        // printSkiplist()
+        printAllKeysAndVals()
+        // search(15, "C")
+        
         put(20, "D")
         put(25, "E")
-        print("-------SEARCH START von 15-------")
-        search(15)
-        search(25)
-        println("-------SEARCH START von 25-------")
-        printAllKeysAndVals()
-        remove(15)
-        println("15 entfernt")
-        printAllKeysAndVals()
-
+        put(15, "l")
         println()
-        printSkiplist()
+        printAllKeysAndVals()
 
+        // var r = search(15)
+        // for (i <- r) {
+        //     println(i.key)
+        // }
+        // println()
+        // println(r.last.key)
+        // println()
+        // println(r.last.value)
+
+        
     }
     // in Empfehlung von Kommilitonen :)
     def printSkiplist(): Unit = {
