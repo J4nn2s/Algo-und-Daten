@@ -1,76 +1,72 @@
-class HashTable[K, V](val size: Int) {
-  private val table: Array[Array[(K, V)]] = Array.fill(size)(Array.empty[(K, V)])
+/* Jannes Glaubitz, Firdevs Ugur
+    used Pseudocode and help from ChatGPT */
 
-  // Erste Kompressionsfunktion: Modulo der Hash-Codes
+import scala.collection.mutable.ListBuffer
+
+class HashTable[K, V](val size: Int) {
+  private val table: Array[ListBuffer[(K, V)]] = Array.fill(size)(ListBuffer.empty[(K, V)])
+
   private def compress1(hashCode: Int): Int = Math.abs(hashCode) % size
 
-  // Zweite Kompressionsfunktion: Modulo einer Primzahl
-  private def compress2(hashCode: Int): Int = Math.abs(hashCode) % 7
 
-  // Methode zum Hinzufügen eines Elements
-  def put(key: K, value: V, useFirstCompression: Boolean): Unit = {
-    val index = if (useFirstCompression) compress1(key.hashCode) else compress2(key.hashCode)
-    var i = index
-    while (i < size && table(i).nonEmpty) { // check for nonEmpty before accessing head
-      if (table(i).head._1 == key) {
-        table(i) = Array((key, value))
-        return
-      }
-      i = (i + 1) % size // wrap around the table if necessary
+  private def compress2(hashCode: Int): Int = Math.abs(hashCode) % 5
+
+  def put(key: K, value: V, useCompression1: Boolean): Unit = {
+    val index = if (useCompression1) compress1(key.hashCode) else compress2(key.hashCode)
+    val bucket = table(index)
+    val existing = bucket.indexWhere(_._1 == key)
+
+    if (existing >= 0) {
+      bucket(existing) = (key, value)
+    } else {
+      bucket += ((key, value))
     }
-    if (i < size) table(i) = Array((key, value))
   }
 
-  // Methode zum Abrufen eines Elements
-  def get(key: K, useFirstCompression: Boolean): Option[V] = {
-    val index = if (useFirstCompression) compress1(key.hashCode) else compress2(key.hashCode)
-    var i = index
-    while (i < size && table(i).nonEmpty) {
-      if (table(i).head._1 == key) return Some(table(i).head._2)
-      i += 1
+
+  def get(key: K, useCompression1: Boolean): V = {
+    val index = if (useCompression1) compress1(key.hashCode) else compress2(key.hashCode)
+    val bucket = table(index)
+    val found = bucket.find(_._1 == key)
+    
+    found match {
+      case Some((_, value)) => value
+      case None => throw new NoSuchElementException(s"Key $key not found")
     }
-    None
   }
 
-  // Methode zum Entfernen eines Elements
-  def remove(key: K, useFirstCompression: Boolean): Unit = {
-    val index = if (useFirstCompression) compress1(key.hashCode) else compress2(key.hashCode)
-    var i = index
-    while (i < size && table(i).nonEmpty) {
-      if (table(i).head._1 == key) {
-        table(i) = Array.empty[(K, V)]
-        return
-      }
-      i += 1
+
+  def remove(key: K, useCompression1: Boolean): Unit = {
+    val index = if (useCompression1) compress1(key.hashCode) else compress2(key.hashCode)
+    val bucket = table(index)
+    val existing = bucket.indexWhere(_._1 == key)
+
+    if (existing >= 0) {
+      bucket.remove(existing)
+    } else {
+      throw new NoSuchElementException(s"Key $key not found")
     }
   }
 }
 
-// Testen der Hash-Tabelle
+// Testen
 object HashTableTest extends App {
-  val hashTable = new HashTable[String, String](10) // Specify types for test
 
-  // Test mit der ersten Kompressionsfunktion
-  hashTable.put("one", "1", useFirstCompression = true)
-  hashTable.put("two", "2", useFirstCompression = true)
-  hashTable.put("three", "3", useFirstCompression = true)
+  val hashTable = new HashTable[String, String](15) 
 
-  println(hashTable.get("one", useFirstCompression = true))   // Ausgabe: Some(1)
-  println(hashTable.get("two", useFirstCompression = true))   // Ausgabe: Some(2)
-  println(hashTable.get("three", useFirstCompression = true)) // Ausgabe: Some(3)
 
-  hashTable.remove("two", useFirstCompression = true)
-  println(hashTable.get("two", useFirstCompression = true))   // Ausgabe: None
+  hashTable.put("one", "Germany", useCompression1 = true)
+  hashTable.put("two", "Spain", useCompression1 = true)
+  hashTable.put("three", "Italy", useCompression1 = true)
 
-  // Test mit der zweiten Kompressionsfunktion
-  hashTable.put("one", "1", useFirstCompression = false)
-  hashTable.put("two", "2", useFirstCompression = false)
-  hashTable.put("three", "3", useFirstCompression = false)
+  println(hashTable.get("one", useCompression1 = true))   
+  println(hashTable.get("two", useCompression1 = true))   
+  println(hashTable.get("three", useCompression1 = true)) 
 
-  println(hashTable.get("one", useFirstCompression = false))   // Ausgabe: Some(1)
-  println(hashTable.get("two", useFirstCompression = false))   // Ausgabe: Some(2)
-  println(hashTable.get("three", useFirstCompression = false)) // Ausgabe: Some(3)
-
-  hashTable.remove("two", useFirstCompression = false)
-  println(hashTable.get("two", useFirstCompression = false))   // Ausgabe: None
+  hashTable.remove("two", useCompression1 = true)
+  try {
+    println(hashTable.get("two", useCompression1 = true)) 
+  } catch {
+    case e: NoSuchElementException => println("not found")
+  }
 }
