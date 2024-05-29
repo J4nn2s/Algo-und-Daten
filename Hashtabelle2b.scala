@@ -1,6 +1,6 @@
 import scala.collection.mutable.ListBuffer
 
-class HashTable[K, V](var size: Int) { // Constructor expects initial size (Int)
+class HashTable[K, V](var size: Int) { 
 
   private var numEntries = 0
   private val maxLoadFactor = 3
@@ -10,7 +10,7 @@ class HashTable[K, V](var size: Int) { // Constructor expects initial size (Int)
 
   private def compress1(hashCode: Int): Int = Math.abs(hashCode) % size
 
-  private def compress2(hashCode: Int): Int = Math.abs(hashCode) % 5 // Alternative compression function
+  private def compress2(hashCode: Int): Int = Math.abs(hashCode) % 5 
 
   private def loadFactor: Double = numEntries.toDouble / size
 
@@ -21,7 +21,7 @@ class HashTable[K, V](var size: Int) { // Constructor expects initial size (Int)
     numEntries = 0
 
     for (bucket <- oldTable; entry <- bucket) {
-      put(entry._1, entry._2, useCompression1 = true) // Use default compression
+      put(entry._1, entry._2, useCompression1 = true) 
     }
   }
 
@@ -33,7 +33,7 @@ class HashTable[K, V](var size: Int) { // Constructor expects initial size (Int)
     }
   }
 
-  def put(key: K, value: V, useCompression1: Boolean = true): Unit = { // Optional useCompression1 with default
+  def put(key: K, value: V, useCompression1: Boolean = true): Unit = { 
     checkAndResize()
 
     val index = if (useCompression1) compress1(key.hashCode) else compress2(key.hashCode)
@@ -48,7 +48,7 @@ class HashTable[K, V](var size: Int) { // Constructor expects initial size (Int)
     }
   }
 
-  def get(key: K, useCompression1: Boolean = true): V = { // Optional useCompression1 with default
+  def get(key: K, useCompression1: Boolean = true): V = { 
     val index = if (useCompression1) compress1(key.hashCode) else compress2(key.hashCode)
     val bucket = table(index)
     val found = bucket.find(_._1 == key)
@@ -59,7 +59,7 @@ class HashTable[K, V](var size: Int) { // Constructor expects initial size (Int)
     }
   }
 
-  def remove(key: K, useCompression1: Boolean = true): Unit = { // Optional useCompression1 with default
+  def remove(key: K, useCompression1: Boolean = true): Unit = { 
     val index = if (useCompression1) compress1(key.hashCode) else compress2(key.hashCode)
     val bucket = table(index)
     val existing = bucket.indexWhere(_._1 == key)
@@ -73,11 +73,10 @@ class HashTable[K, V](var size: Int) { // Constructor expects initial size (Int)
   }
 }
 
-// Testen der Hash-Tabelle (Testing the Hash Table)
+// Testen 
 object HashTableTest extends App {
 
-  val hashTable = new HashTable[String, String](10) // Specify initial size (e.g., 10)
-
+  val hashTable = new HashTable[String, String](15) 
   hashTable.put("one", "Germany")
   hashTable.put("two", "Spain")
   hashTable.put("three", "Italy")
