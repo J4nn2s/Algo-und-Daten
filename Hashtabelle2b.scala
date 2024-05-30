@@ -1,3 +1,4 @@
+/* Used help from Gemini and Chat GPT  */
 import scala.collection.mutable.ListBuffer
 
 class HashTable[K, V](var size: Int) { 
