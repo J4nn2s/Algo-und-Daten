@@ -13,8 +13,8 @@ class HashTable[K, V](var size: Int) {
   private def compress2(hashCode: Int): Int = Math.abs(hashCode) % 5 
 
   private def loadFactor: Double = numEntries.toDouble / size
-
   private def resize(newSize: Int): Unit = {
+    println("Wir benötigen einen resize")
     val oldTable = table
     size = newSize
     table = Array.fill(size)(ListBuffer.empty[(K, V)])
@@ -59,7 +59,7 @@ class HashTable[K, V](var size: Int) {
     }
   }
 
-  def remove(key: K, useCompression1: Boolean = true): Unit = { 
+  def remove(key: K, useCompression1: Boolean = true): Unit = {
     val index = if (useCompression1) compress1(key.hashCode) else compress2(key.hashCode)
     val bucket = table(index)
     val existing = bucket.indexWhere(_._1 == key)
@@ -67,6 +67,7 @@ class HashTable[K, V](var size: Int) {
     if (existing >= 0) {
       bucket.remove(existing)
       numEntries -= 1
+      checkAndResize() 
     } else {
       throw new NoSuchElementException(s"Key $key not found")
     }
@@ -76,15 +77,34 @@ class HashTable[K, V](var size: Int) {
 // Testen 
 object HashTableTest extends App {
 
-  val hashTable = new HashTable[String, String](15) 
+  val hashTable = new HashTable[String, String](5) 
   hashTable.put("one", "Germany")
   hashTable.put("two", "Spain")
   hashTable.put("three", "Italy")
+  hashTable.put("four", "France")
+  hashTable.put("five", "Portugal")
+  hashTable.put("six", "Belgium")
+  hashTable.put("seven", "Netherlands")
+  hashTable.put("eight", "Greece")
+  hashTable.put("nine", "Sweden")
+  hashTable.put("ten", "Norway")
+  hashTable.put("eleven", "Denmark")
+  hashTable.put("twelve", "Finland")
+  hashTable.put("thirteen", "Austria")
+  hashTable.put("fourteen", "Switzerland")
+  hashTable.put("fifteen", "Poland")
+  hashTable.put("sixteen", "Czech Republic")
+  hashTable.put("seventeen", "Hungary")
+  hashTable.put("eighteen", "Slovakia")
+  hashTable.put("nineteen", "Slovenia")
+  hashTable.put("twenty", "Croatia")
+  // hier erster Resize theoretisch
+  hashTable.put("twentyone", "Senegal")
+  hashTable.put("twentytwo", "Afghanistan")
 
   println(hashTable.get("one"))
   println(hashTable.get("two"))
   println(hashTable.get("three"))
-
   hashTable.remove("two")
   try {
     println(hashTable.get("two"))
