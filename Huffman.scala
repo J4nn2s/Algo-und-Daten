@@ -1,74 +1,72 @@
-// mit Hilfe von Chat GPT und GEMINI
-
-import scala.collection.mutable.PriorityQueue
-
-case class HuffmanNode(frequency: Int, byte: Option[Byte], left: Option[HuffmanNode], right: Option[HuffmanNode])
-
-object HuffmanNode {
-  implicit val ordering: Ordering[HuffmanNode] = Ordering.by(-_.frequency)
-}
+class HuffmanNode(val frequency: Int, val byte: Option[Byte], val left: Option[HuffmanNode], val right: Option[HuffmanNode])
 
 object HuffmanTree {
   def buildTree(frequencies: Map[Byte, Int]): HuffmanNode = {
-    val pq = PriorityQueue.empty[HuffmanNode]
-    frequencies.foreach { case (byte, freq) =>
-      pq.enqueue(HuffmanNode(freq, Some(byte), None, None))
+    val pq = frequencies.map { case (byte, freq) =>
+      new HuffmanNode(freq, Some(byte), None, None)
+    }.toList.sortBy(-_.frequency)
+
+    def mergeNodes(nodes: List[HuffmanNode]): HuffmanNode = {
+      if (nodes.length == 1) nodes.head
+      else {
+        val left = nodes.last
+        val right = nodes.init.last
+        val newNode = new HuffmanNode(left.frequency + right.frequency, None, Some(left), Some(right))
+        mergeNodes((newNode :: nodes.init.init).sortBy(-_.frequency))
+      }
     }
 
-    while (pq.size > 1) {
-      val left = pq.dequeue()
-      val right = pq.dequeue()
-      val merged = HuffmanNode(left.frequency + right.frequency, None, Some(left), Some(right))
-      pq.enqueue(merged)
-    }
-
-    pq.dequeue()
+    mergeNodes(pq)
   }
 
-  def generateCodes(node: HuffmanNode, prefix: String, codeTable: collection.mutable.Map[Byte, String]): Unit = {
-    node match {
-      case HuffmanNode(_, Some(byte), None, None) => codeTable(byte) = prefix
-      case HuffmanNode(_, None, Some(left), Some(right)) =>
-        generateCodes(left, prefix + "0", codeTable)
-        generateCodes(right, prefix + "1", codeTable)
-      case _ => 
+  def generateCodes(node: HuffmanNode, prefix: String): Map[Byte, String] = {
+    if (node.byte.isDefined) {
+      Map(node.byte.get -> prefix)
+    } else {
+      val leftCodes = generateCodes(node.left.get, prefix + "0")
+      val rightCodes = generateCodes(node.right.get, prefix + "1")
+      leftCodes ++ rightCodes
     }
   }
 }
 
 object HuffmanEncode {
-  def encode(data: Array[Byte]): (Array[Byte], Map[Byte, String]) = {
-    val frequencies = data.groupBy(identity).view.mapValues(_.length).toMap
+  def encode(data: Array[Byte]): (List[Byte], Map[Byte, String]) = {
+    val frequencies = data.groupBy(identity).mapValues(_.length).toMap
     val huffmanTree = HuffmanTree.buildTree(frequencies)
-    val codeTable = collection.mutable.Map[Byte, String]()
-    HuffmanTree.generateCodes(huffmanTree, "", codeTable)
+    val codeTable = HuffmanTree.generateCodes(huffmanTree, "")
 
-    val encodedData = data.flatMap(byte => codeTable(byte).map(_.asDigit.toByte)).toArray
-    (encodedData, codeTable.toMap)
+    var encodedData = List[Byte]()
+    for (byte <- data) {
+      val code = codeTable(byte)
+      for (bit <- code) {
+        encodedData = encodedData :+ bit.asDigit.toByte
+      }
+    }
+    (encodedData, codeTable)
   }
 }
 
 object HuffmanDecode {
-  def decode(encodedData: Array[Byte], codeTable: Map[Byte, String]): Array[Byte] = {
+  def decode(encodedData: List[Byte], codeTable: Map[Byte, String]): List[Byte] = {
     val reversedCodeTable = codeTable.map(_.swap)
+    var decodedData = List[Byte]()
     var currentCode = ""
-    val decodedData = encodedData.flatMap { bit =>
+    
+    for (bit <- encodedData) {
       currentCode += bit.toString
-      reversedCodeTable.get(currentCode) match {
-        case Some(byte) =>
-          currentCode = ""
-          Some(byte)
-        case None => None
+      if (reversedCodeTable.contains(currentCode)) {
+        decodedData = decodedData :+ reversedCodeTable(currentCode)
+        currentCode = ""
       }
-    }.toArray
+    }
     decodedData
   }
 }
 
 object HuffmanExample {
   def main(args: Array[String]): Unit = {
-    // Beispiel 1
-    val exampleData1 = "this is an example for huffman encoding".getBytes
+    val exampleData1 = "algorithmen und datenstrukturen".getBytes
     println("Original data (Example 1):")
     println(new String(exampleData1))
 
@@ -78,10 +76,9 @@ object HuffmanExample {
 
     val decodedData1 = HuffmanDecode.decode(encodedData1, codeTable1)
     println("Decoded data (Example 1):")
-    println(new String(decodedData1))
+    println(new String(decodedData1.toArray))
 
-    // Beispiel 2
-    val exampleData2 = "another example with different text".getBytes
+    val exampleData2 = "aabbbccbddbbcbaadcbda".getBytes
     println("Original data (Example 2):")
     println(new String(exampleData2))
 
@@ -91,6 +88,19 @@ object HuffmanExample {
 
     val decodedData2 = HuffmanDecode.decode(encodedData2, codeTable2)
     println("Decoded data (Example 2):")
-    println(new String(decodedData2))
+    println(new String(decodedData2.toArray))
+
+    val exampleData3 = "barbarasrababerbar".getBytes
+    println("Original data (Example 3):")
+    println(new String(exampleData3))
+
+    val (encodedData3, codeTable3) = HuffmanEncode.encode(exampleData3)
+    println("Encoded data (Example 3):")
+    println(encodedData3.mkString(" "))
+
+    val decodedData3 = HuffmanDecode.decode(encodedData3, codeTable3)
+    println("Decoded data (Example 3):")
+    println(new String(decodedData3.toArray))
+
   }
 }
