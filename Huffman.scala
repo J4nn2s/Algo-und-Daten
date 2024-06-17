@@ -1,3 +1,6 @@
+// Jannes Glaubitz und Firdevs Ugur
+// ChatGPT wurde verwendet beim Programmieren
+
 class HuffmanNode(val frequency: Int, val byte: Option[Byte], val left: Option[HuffmanNode], val right: Option[HuffmanNode])
 
 object HuffmanTree {
@@ -19,7 +22,7 @@ object HuffmanTree {
     mergeNodes(pq)
   }
 
-  def generateCodes(node: HuffmanNode, prefix: String): Map[Byte, String] = {
+  def generateCodes(node: x, prefix: String): Map[Byte, String] = {
     if (node.byte.isDefined) {
       Map(node.byte.get -> prefix)
     } else {
