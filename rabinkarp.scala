@@ -1,9 +1,10 @@
 import scala.io.Source
 import java.net.URL
+import java.net.URI
 
 // Funktion zum Herunterladen des Textes von einer URL
 def getTextFromUrl(url: String): String = {
-  val source = Source.fromURL(new URL(url))
+  val source = Source.fromURL(new URI(url).toURL())
   try source.mkString finally source.close()
 }
 
@@ -25,6 +26,24 @@ def naiveAlgo(s: String, p: String): Int = {
     }
     return count
 }
+// def naiveAlgo(s: String, p: String): Int = {
+//     val n: Int = s.length()
+//     val m: Int = p.length()
+//     var i: Int = 0
+//     var j: Int = 0
+//     var count: Int = 0
+//     while (i < n-m) {
+//         while (s(i+j) == p(j)) {
+//             j = j + 1
+//             if (j==m) {
+//                 count = count +1
+//             }
+//         }
+//         i = i + 1
+//         j = 0
+//     }
+//     return count
+// }
 
 @main def run(): Unit = {
   val url = "https://www.gutenberg.org/files/2701/2701-0.txt"
