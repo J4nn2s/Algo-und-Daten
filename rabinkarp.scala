@@ -20,3 +20,8 @@ def naiveAlgo(s: String, p: String): Boolean = {
 @main def run(): Unit = {
   println(naiveAlgo(s = "RHABARBERBARBARBARENBARTBARBIER", p = "BARBIE"))
 }
+
+
+def rabinkarp(s: String, p:String): Boolean = {
+    return true
+}
