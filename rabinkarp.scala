@@ -45,9 +45,21 @@ def rabinKarp(s: String, p: String): Int = {
   val url = "https://www.gutenberg.org/files/2701/2701-0.txt"
   val mobyDickText = getTextFromUrl(url)
   println(s"Textlänge: ${mobyDickText.length}")
+  
+  val startTime = System.nanoTime()
   val foundNaive = naiveAlgo(mobyDickText, "whale")
-  println(s"Das Wort whale wurde im Text durch den Naiven Algo $foundNaive mal gefunden.")
-  val foundRabinKarp = rabinKarp(mobyDickText, "whale")
-  println(s"Das Wort whale wurde im Text durch den Rabin-Karp $foundRabinKarp mal gefunden.")
+  val endTime = System.nanoTime()
+  val duration = (endTime - startTime) / 1e6 // Konvertiere die Zeit in Millisekunden
 
+
+  println(s"Das Wort whale wurde im Text durch den Naiven Algo $foundNaive mal gefunden.")
+  println(s"Dauer: $duration")
+
+  val startTimeKarp = System.nanoTime()
+  val foundRabinKarp = rabinKarp(mobyDickText, "whale")
+  val endTimeKarp = System.nanoTime()
+  val durationKarp = (endTimeKarp - startTimeKarp) / 1e6 // Konvertiere die Zeit in Millisekunden
+
+  println(s"Das Wort whale wurde im Text durch den Rabin-Karp $foundRabinKarp mal gefunden.")
+  println(s"Dauer: $durationKarp")
 }
