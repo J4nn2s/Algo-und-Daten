@@ -16,45 +16,38 @@ def naiveAlgo(s: String, p: String): Int = {
     var count: Int = 0
     while (i <= n-m) {
         while (j < m && i + j < n && s(i + j) == p(j)) {
-            j = j + 1
+            j += 1
             if (j==m) {
-                count = count +1
+                count += 1
             }
         }
-        i = i + 1
+        i += 1
         j = 0
     }
     return count
 }
-// def naiveAlgo(s: String, p: String): Int = {
-//     val n: Int = s.length()
-//     val m: Int = p.length()
-//     var i: Int = 0
-//     var j: Int = 0
-//     var count: Int = 0
-//     while (i < n-m) {
-//         while (s(i+j) == p(j)) {
-//             j = j + 1
-//             if (j==m) {
-//                 count = count +1
-//             }
-//         }
-//         i = i + 1
-//         j = 0
-//     }
-//     return count
-// }
+
+def rabinKarp(s: String, p: String): Int = {
+    val n: Int = s.length()
+    val m: Int = p.length()
+    val patternHash = p.hashCode() // constant hash of pattern
+    var count: Int = 0
+    for (i <- 0 to n - m) {
+      val textHash = s.substring(i, i + m).hashCode
+      if (patternHash == textHash && s.substring(i, i + m) == p) {
+        count += 1
+      }
+    }
+    count
+}
 
 @main def run(): Unit = {
   val url = "https://www.gutenberg.org/files/2701/2701-0.txt"
   val mobyDickText = getTextFromUrl(url)
   println(s"Textlänge: ${mobyDickText.length}")
-  val found = naiveAlgo(mobyDickText, "whale")
-  println(s"Das Wort whale wurde im Text $found mal gefunden.")
+  val foundNaive = naiveAlgo(mobyDickText, "whale")
+  println(s"Das Wort whale wurde im Text durch den Naiven Algo $foundNaive mal gefunden.")
+  val foundRabinKarp = rabinKarp(mobyDickText, "whale")
+  println(s"Das Wort whale wurde im Text durch den Rabin-Karp $foundRabinKarp mal gefunden.")
 
-}
-
-
-def rabinkarp(s: String, p:String): Boolean = {
-    return true
 }
