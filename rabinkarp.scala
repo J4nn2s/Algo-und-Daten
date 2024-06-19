@@ -49,11 +49,11 @@ def rabinKarp(s: String, p: String): Int = {
 def rabinKarpMultiple(s: String, patterns: List[String]): Map[String, Int] = {
   val n: Int = s.length
   val minPatternLength: Int = patterns.map(_.length).min
-  val maxPatternLength: Int = patterns.map(_.length).max // Finde die maximale Länge der Suchmuster
+  val maxPatternLength: Int = patterns.map(_.length).max 
   val patternHashes = patterns.map(_.take(maxPatternLength).hashCode).toSet
   val counts = Map[String, Int]().withDefaultValue(0)
 
-  for (m <- minPatternLength to maxPatternLength) { // Iteriere über alle möglichen Längen der Suchmuster von min bis max
+  for (m <- minPatternLength to maxPatternLength) {
     for (i <- 0 to n - m) {
       val textSubstring = s.substring(i, i + m)
       val textHash = textSubstring.take(maxPatternLength).hashCode
